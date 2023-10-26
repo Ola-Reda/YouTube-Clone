@@ -59,9 +59,17 @@ a {
   color: white !important;
 }
 
+.player {
+  width: 100%;
+  height: 77vh;
+}
+
 @media (max-width: 600px) {
   .input-search {
       width: 200px;
+  }
+  .player {
+    height: 45vh;
   }
 }
 
