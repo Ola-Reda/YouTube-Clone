@@ -8,7 +8,7 @@ const Videos = (props) => {
     if(!videos) return <Loader/>
 
     return (
-        <Stack direction='row' flexWrap='wrap' gap={2}>
+        <Stack direction={props.direction || 'row'} flexWrap='wrap' gap={2}>
         {
             videos.map((item,index) => {
                 return  <Box key={index}>

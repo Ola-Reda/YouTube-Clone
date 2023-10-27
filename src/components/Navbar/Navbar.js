@@ -7,7 +7,7 @@ import { SearchBar } from '../index';
 
 const Navbar = () => {
   return (
-      <Stack direction="row" sx={{position: 'sticky', top: 0, background: '#000', padding: 2, alignItems: 'center', justifyContent: 'space-between'}}>
+      <Stack direction="row" sx={{position: 'sticky', top: 0, background: '#000', padding: 2, alignItems: 'center', justifyContent: 'space-between', zIndex: '999'}}>
         <Link to="/">
           <img src={logo} height={45} alt="logo"/>
         </Link>

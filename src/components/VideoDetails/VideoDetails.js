@@ -34,26 +34,26 @@ const VideoDetails = () => {
             <Typography fontWeight='bold' p={2} color="#fff" variant="h5">
               {videoDetails?.snippet?.title}
             </Typography>
-            <Stack direction='row'>
+            <Stack direction='row' justifyContent='space-between' px={2} py={1}>
               <Link to={`/channels/${videoDetails?.snippet?.channelId}`}>
                 <Typography color="#fff">
                   {videoDetails?.snippet?.channelTitle}
                   <CheckCircle sx={{fontSize: '12px', ml: "5px", color: 'gray'}}/>
                 </Typography>
               </Link>
-              <Stack direction='row' gap={2}> 
+              <Stack direction='row' gap={2} sx={{color:"#fff"}} alignItems='center'> 
                 <Typography  variant="body1">
-                  {videoDetails?.statistics?.viewCount}views
+                  {videoDetails?.statistics?.viewCount} Views
                 </Typography>
                 <Typography variant="body1">
-                  {videoDetails?.statistics?.likeCount}likes
+                  {videoDetails?.statistics?.likeCount} Likes
                 </Typography>
               </Stack>
             </Stack>
           </Box>
         </Box>
         <Box px={2} py={{ md: 1, xs: 5 }} justifyContent="center" alignItems="center" >
-          <Videos videos={videos}/>
+          <Videos videos={videos} direction="column"/>
         </Box>
       </Stack>
     </Box>
