@@ -8,7 +8,7 @@ https://youtube-clone-ola.vercel.app/
 
 ### About
 
-youtube-clone helps you to watching videos and search for what you want
+youtube-clone helps you to watch videos and search for what you want
 
 the project was created using Rapid API, Material UI and React.js
 
