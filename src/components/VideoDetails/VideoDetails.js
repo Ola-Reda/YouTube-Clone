@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom'
 import { fatchData } from '../../utils/api'
 import { Stack, Box, Typography } from '@mui/material'
 import ReactPlayer from "react-player";
-import { Videos } from '../index'
+import { Loader, Videos } from '../index'
 import { CheckCircle } from '@mui/icons-material';
 
 
@@ -25,6 +25,8 @@ const VideoDetails = () => {
   }, [params.videoId])
 
 
+  if(!videoDetails) return <Loader/>
+
   return (
     <Box minHeight="95vh">
       <Stack direction={{md: 'row', xs: 'column'}}>
@@ -36,17 +38,17 @@ const VideoDetails = () => {
             </Typography>
             <Stack direction='row' justifyContent='space-between' px={2} py={1}>
               <Link to={`/channels/${videoDetails?.snippet?.channelId}`}>
-                <Typography color="#fff">
+                <Typography color="#fff" variant="subtitle1">
                   {videoDetails?.snippet?.channelTitle}
                   <CheckCircle sx={{fontSize: '12px', ml: "5px", color: 'gray'}}/>
                 </Typography>
               </Link>
               <Stack direction='row' gap={2} sx={{color:"#fff"}} alignItems='center'> 
-                <Typography  variant="body1">
-                  {videoDetails?.statistics?.viewCount} Views
+                <Typography  variant="body1" sx={{ opacity: 0.7 }}>
+                  {parseInt(videoDetails?.statistics?.viewCount).toLocaleString()} Views
                 </Typography>
-                <Typography variant="body1">
-                  {videoDetails?.statistics?.likeCount} Likes
+                <Typography variant="body1" sx={{ opacity: 0.7 }}>
+                  {parseInt(videoDetails?.statistics?.likeCount).toLocaleString()} Likes
                 </Typography>
               </Stack>
             </Stack>

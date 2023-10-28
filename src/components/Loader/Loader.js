@@ -1,10 +1,12 @@
 import React from 'react'
-import { Box, CircularProgress } from '@mui/material'
+import { Box, Stack, CircularProgress } from '@mui/material'
 
 const Loader = () => {
     return (
-        <Box sx={{display: 'flex', alignItems: 'center', justifyContent: 'center', height: '87vh'}}>
-            <CircularProgress/>
+        <Box minHeight="95vh">
+            <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'center', height: '87vh'}}>
+                <CircularProgress/>
+            </Stack>
         </Box>
     )
 }
